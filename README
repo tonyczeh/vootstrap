@@ -1,0 +1,56 @@
+vootstrap is a python virtualenv bootstrap creator.  Its command-line arguments
+are identical to virtualenv with a few notable additions:
+
+- Instead of a directory to install the virtual environment into, give an
+  output filename.  When the resulting file is executed it will create the
+  virtual environment in the directory where it resides with the same
+  parameters provided to vootstrap.
+
+- The --path argument can be used 0 or more times to add additional directories
+  to the virtual environment's sys.path.  These directories should be given
+  relative to the location of the output vootstrap file in most all cases.
+
+- The --install-requirements flag can be set to automatically pip install the
+  requirements.txt file inside the virtual environment after it is built.
+
+
+Usage: vootstrap [OPTIONS] OUTFILE
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Increase verbosity
+  -q, --quiet           Decrease verbosity
+  -p PYTHON_EXE, --python=PYTHON_EXE
+                        The Python interpreter to use, e.g.,
+                        --python=python2.5 will use the python2.5 interpreter
+                        to create the new environment.  The default is the
+                        interpreter that virtualenv was installed with
+                        (/usr/bin/python)
+  --clear               Clear out the non-root install and start from scratch
+  --no-site-packages    Don't give access to the global site-packages dir to
+                        the virtual environment (default; deprecated)
+  --system-site-packages
+                        Give access to the global site-packages dir to the
+                        virtual environment
+  --unzip-setuptools    Unzip Setuptools or Distribute when installing it
+  --relocatable         Make an EXISTING virtualenv environment relocatable.
+                        This fixes up scripts and makes all .pth files
+                        relative
+  --distribute, --use-distribute
+                        Use Distribute instead of Setuptools. Set environ
+                        variable VIRTUALENV_DISTRIBUTE to make it the default
+  --extra-search-dir=SEARCH_DIRS
+                        Directory to look for setuptools/distribute/pip
+                        distributions in. You can add any number of additional
+                        --extra-search-dir paths.
+  --never-download      Never download anything from the network.  Instead,
+                        virtualenv will fail if local distributions of
+                        setuptools/distribute/pip are not present.
+  --prompt=PROMPT       Provides an alternative prompt prefix for this
+                        environment
+  --install-requirements
+                        Install requirements.txt after vootstrapping
+  --path=PATH           Directory to add to vootstrapped sys.path. You can add
+                        any number of additional --path paths. Relative
+                        directories are relative to the vootstrapped directory
