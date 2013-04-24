@@ -1,3 +1,4 @@
+import os
 import sys
 
 from setuptools import setup
@@ -5,7 +6,10 @@ from setuptools import setup
 from vootstrap import __version__
 
 
-long_description = open('README').read()
+root_dir = os.path.dirname(__file__)
+os.chdir(root_dir)
+
+long_description = open(os.path.join(root_dir, 'README')).read()
 
 setup(
     author="Tony Czeh",
