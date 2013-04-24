@@ -9,7 +9,7 @@ except:
 from . import snippits
 
 
-__version__ = "0.9"
+__version__ = "0.9.1"
 
 
 def file_search_dirs():

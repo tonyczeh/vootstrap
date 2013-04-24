@@ -5,17 +5,7 @@ from setuptools import setup
 from vootstrap import __version__
 
 
-long_description = """
-vootstrap
-=========
-
-A tool for creating virtualenv bootstrap scripts.
-
-0.9
----
-
-* Initial release
-"""
+long_description = open('README').read()
 
 setup(
     author="Tony Czeh",
